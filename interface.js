@@ -115,20 +115,20 @@ $(function () {
     }
   });
 
-  // $("#all-day-event-checkbox").change(function (e) {
-  //   console.log(e);
-  //   if (this.checked) {
-  //     showAllDayEventOptions();
-  //     var event = new CustomEvent("AlldaycheckStartDate", {
-  //       detail: {
-  //         hazcheeseburger: true,
-  //       },
-  //     });
-  //     $("#all-day-event-date").trigger("log", ["AlldaycheckStartDate"]);
-  //   } else {
-  //     hideAllDayEventOptions();
-  //   }
-  // });
+  $("#all-day-event-checkbox").mousedown(function (e) {
+    console.log(e);
+    if (this.checked) {
+      showAllDayEventOptions();
+      var event = new CustomEvent("AlldaycheckStartDate", {
+        detail: {
+          hazcheeseburger: true,
+        },
+      });
+      $("#all-day-event-date").trigger("log", ["AlldaycheckStartDate"]);
+    } else {
+      hideAllDayEventOptions();
+    }
+  });
 
   $("#all-day-event-date").on("change", function (e) {
     if (Date.parse($("#all-day-event-date").val())) {
