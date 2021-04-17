@@ -99,24 +99,8 @@ $(function () {
     }
   });
 
-  $("#all-day-event-checkbox").keypress(function (e) {
-    if (e.keyCode == 13) {
-      if (this.checked) {
-        showAllDayEventOptions();
-        var event = new CustomEvent("AlldaycheckStartDate", {
-          detail: {
-            hazcheeseburger: true,
-          },
-        });
-        $("#all-day-event-date").trigger("log", ["AlldaycheckStartDate"]);
-      } else {
-        hideAllDayEventOptions();
-      }
-    }
-  });
-
-  $("#all-day-event-checkbox").mousedown(function (e) {
-    console.log(e);
+  
+  $("#all-day-event-checkbox").change(function () {
     if (this.checked) {
       showAllDayEventOptions();
       var event = new CustomEvent("AlldaycheckStartDate", {
